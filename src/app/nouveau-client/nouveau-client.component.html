@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="col-md-9 col-xs-12 col-sm-6">
+    <div class="panel-default">
+      <div class="panel-heading"> Nouveaux Client</div>
+      <div class="panel-body" *ngIf="mode==1">
+
+        <form #f="ngForm"(ngSubmit)="onSaveClient(f.value)">
+          <div class="form-group">
+            <label class="">Nom</label>
+            <input class="form-control" type="text" name="nom" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="">Prenom</label>
+            <input class="form-control" type="text" name="prenom" ngModel>
+          </div>
+
+          <button  class="btn btn-success" type="submit">Enregistrer</button>
+        </form>
+      </div>
+
+      <div class="panel-body"  *ngIf="mode==2" >
+        <button class=" btn btn-success" (click)="onNewClients()">Ajouter un nouveau Client</button>
+        <p></p>
+        <div class="form-group">
+          <label> ID :  </label>
+          <label>{{currentClient.id}}</label>
+        </div>
+        <div class="form-group">
+          <label> Nom :  </label>
+          <label>{{currentClient.nom}}</label>
+        </div>
+        <div class="form-group">
+          <label> Prenom :  </label><label>{{currentClient.prenom}}</label>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
